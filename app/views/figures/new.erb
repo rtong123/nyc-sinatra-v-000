@@ -1,12 +1,15 @@
 <h1> Create a New Figure </h1>
 
-<form action ='/figures' method = "POST">
+<form action='/figures' method="POST">
 
-  <label> Title </label>
-  <input type="text" name="title" id="figure_title">
+  <label>Figure Name</label>
+  <input type="text" name="name" id="figure[name]">
 
-  <label> Figure </label>
+  <label>Landmark Name</label>
+  <input type="text" name="landmark_name" id="landmark[name]">
 
-  <label> Landmark </label>
+  <label>Title Name</label>
+  <input type="text" name="title_name" id="title[name]">
 
+  <input type="submit" value="Create New Figure">
 </form>

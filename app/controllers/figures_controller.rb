@@ -1,5 +1,10 @@
 class FiguresController < ApplicationController
 
+  get '/figures' do
+    @figures = Figure.all
+    erb :'/figures/index'
+  end
+
   get '/figures/new' do
     erb :'/figures/new'
   end
@@ -7,9 +12,6 @@ class FiguresController < ApplicationController
   post '/figures' do
   end
 
-  get '/figures' do
-    @figures = Figure.all
-  end
 
   get '/figures/edit' do
     erb :'/figures/edit'

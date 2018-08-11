@@ -11,6 +11,8 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+    Figure.create(name: params[:title][:name])
+    redirects to '/figures/index'
   end
 
 

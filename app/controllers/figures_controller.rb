@@ -7,12 +7,13 @@ class FiguresController < ApplicationController
 
   get '/figures/new' do
     @titles = Title.all
+    @landmarks = Landmark.all
     erb :'/figures/new'
   end
 
   post '/figures' do
-    Figure.create(name: params[:title][:name])
-    redirects to '/figures/index'
+    @figure = Figure.create(name: params[:figure][:name], title_ids: params[:figure][:title_ids], landmark_ids: params[:figure][:landmark_ids])
+    redirect to '/figures'
   end
 
 

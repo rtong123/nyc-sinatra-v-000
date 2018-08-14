@@ -10,8 +10,7 @@ get '/landmarks/new' do
 end
 
 post '/landmarks' do
-  Landmark.create(title: params[:name], year_completed: params[:year])
-
+ @landmark = Landmark.create(name: params[:name], year_completed: params[year_completed])
 end
 
 end

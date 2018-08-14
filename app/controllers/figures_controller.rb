@@ -18,9 +18,17 @@ class FiguresController < ApplicationController
       @figure.titles << @title
     end
 
-    # redirect to '/figures/#{@figure.id}'
+    if !params[:landmark][:name].empty?
+      @landmark = Landmark.create(params[:landmark])
+      @figure.landmarks << @landmark
+    end
+
+    redirect to "/figures/#{@figure.id}"
   end
 
+  get "/figures/#{@figure.id}" do
+    
+  end
 
   get '/figures/:id/edit' do
     erb :'/figures/edit'

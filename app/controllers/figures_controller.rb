@@ -13,11 +13,11 @@ class FiguresController < ApplicationController
 
   post '/figures' do
     @figure = Figure.create(params[:figure])
-    redirect to '/figures'
+    redirect to '/figures/#{@figure.id}'
   end
 
 
-  get '/figures/edit' do
+  get '/figures/:id/edit' do
     erb :'/figures/edit'
   end
 

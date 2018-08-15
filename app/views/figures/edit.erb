@@ -8,9 +8,16 @@
 
   <br></br>
 
+  <label>Titles:</label>
+  <br></br>
+  <%@titles.each do |title|%>
+  <%=title.name%>
+  <input type="checkbox" value="<%=title.id%>" name="figure[title_ids][]" id="title_<%=title.id%>">
+  <%end%>
+
   <label>New Landmark:</label>
   <br></br>
-  <input type="text" name="landmark[name]" id="landmark_name">
+  <input type="text" name="landmark[name]" id="new_landmark">
 
   <br></br>
   <input type="submit" value="Edit Figure">

@@ -23,17 +23,21 @@ class FiguresController < ApplicationController
       @figure.landmarks << @landmark
     end
 
-    # redirect to "/figures/#{@figure.id}"
+    redirect to "/figures"
   end
 
-  # get "/figures/#{@figure.id}" do
-  #   @figure = Figure.find(params[:id])
-  #   erb :'/figures/show'
-  # end
+  get "/figures/:id" do
+    @figure = Figure.find(params[:id])
+    erb :'/figures/show'
+  end
 
   get '/figures/:id/edit' do
+    @figure = Figure.find(params[:id])
     erb :'/figures/edit'
   end
 
+  post "/figures/:id" do
+    @figure = Figure.find(params[:id])
+  end
 
 end

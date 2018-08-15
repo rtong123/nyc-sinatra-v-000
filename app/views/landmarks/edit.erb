@@ -1,6 +1,7 @@
 <h1> Update Landmark </h1>
 
 <form action="/landmarks/<%=@landmark.id%>" method="POST">
+    <input type="hidden" name="_method" value="patch">
 
   <label>Name:</label>
   <br></br>

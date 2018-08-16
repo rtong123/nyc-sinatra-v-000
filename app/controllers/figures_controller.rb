@@ -40,7 +40,10 @@ class FiguresController < ApplicationController
   patch "/figures/:id" do
     @figure = Figure.find(params[:id])
     @figure.update(name:params[:figure][:name])
+    @figure.update(landmark: params[:figure][:landmark])
     @figure.save
+
+    redirect to "/figures/#{@figure.id}"
   end
 
 end
